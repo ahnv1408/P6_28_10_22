@@ -16,7 +16,7 @@ app.use(cors());
  app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 //Connection mongoDb avec mongoose 
-mongoose.connect(`mongodb+srv://userpiiquante:mdppiiquante@connexionpiiquante.xn3li9m.mongodb.net/?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_NAME}.xn3li9m.mongodb.net/?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
